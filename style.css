@@ -1,0 +1,18 @@
+*{
+    font-family:  Helvetica, sans-serif;
+}
+
+.navBar{
+    display: flex;
+    justify-content: center;
+}
+.navElements{
+    display: inline-block;
+    margin: 20px 100px 0px 0px;
+    font-size: 22px;
+    
+}
+#login{
+    font-size: 22px;
+    background-color: rgb(90, 241, 90);
+}
