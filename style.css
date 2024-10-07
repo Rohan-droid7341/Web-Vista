@@ -8,11 +8,11 @@
 }
 .navElements{
     display: inline-block;
-    margin: 20px 100px 0px 0px;
-    font-size: 22px;
+    margin: 20px 90px 0px 0px;
+    font-size: 21px;
     
 }
 #login{
-    font-size: 22px;
+    font-size: 21px;
     background-color: rgb(90, 241, 90);
 }
