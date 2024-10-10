@@ -1,1 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Rizz</title>
+    
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:  Helvetica, sans-serif, sans-serif;
+}
+
+.navbar {
+    position: fixed; /* Sticks to the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: rgba(255, 255, 255, 0.5); /* Initially semi-transparent */
+    backdrop-filter: blur(10px); /* Adds a blur effect */
+    transition: background-color 0.3s ease;
+}
+
+.content-section {
+    height: 1000px; /* Large section for scrolling */
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.navbar .logo img {
+    width: 100px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px; /* Spacing between the login and signup buttons */
+}
+
+.login-btn {
+
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(104, 85, 224, 1);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    color: white;
+    box-shadow: 0px 0px 20px 5px darkgrey;
+    background-color: rgba(104, 85, 224, 1);
+    transform: scale(1.10);
+}
+
+.signup-btn {
+    color: white;
+    background-color: rgba(104, 85, 224, 1);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.signup-btn:hover {
+    color: white;
+    box-shadow: 0px 0px 20px 5px darkgrey;
+    background-color: rgba(104, 85, 224, 1);
+    transform: scale(1.10);
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1590010434276-ba3a98994476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your image */
+    background-size: cover;
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 75vh; /* Full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero .content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 25px;
+    
+}
+
+.Aboutusheader {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+
+.Aboutusmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+.Aboutus{
+    background-image: linear-gradient(to bottom, #f7f7f7, #fff);
+    padding: 2em;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.Aboutussection {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2em;
+}
+
+.features {
+    background-color: #d6d3d3;
+    padding: 2em;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width:70% ;
+}
+
+.features ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.features li {
+    margin-bottom: 10px;
+}
+
+i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.why-choose-us {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 2em;
+}
+
+.why-choose-us .advantage-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-choose-us .advantage-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.advantage-box img {
+    width: 200px;
+    height: 125px;
+    object-fit: cover;
+    border-radius:0%;
+    margin-bottom: 8px;
+}
+
+.advantage-box h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.advantage-box p {
+    font-size: 1em;
+    color: #666;
+}
+
+.mission {
+    background-color: #eef7ff;
+    padding: 3em;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.mission h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.mission p {
+    font-size: 1.2em;
+    color: #34495e;
+    line-height: 1.6;
+}
+
+.mission img {
+    max-width: 120px;
+    margin-top: 20px;
+}
+
+.fun-facts {
+    background-color: #d6d3d3;
+    padding: 3em;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.fun-facts h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #1a271f;
+}
+
+.fun-facts .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.fact-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.fact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.fact-box h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.fact-box p {
+    font-size: 1em;
+    color: #666;
+}
+
+.fact-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+        .quiz {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 10px;
+            text-align: center;
+        }
+
+        .k {
+            color: #FFFFFF; 
+            margin: 0 0 20px;
+        }
+
+        .a {
+            color: #B0B0B0; 
+            margin: 0 0 30px;
+        }
+
+        .ktube {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .subject {
+            background-color: #2C2C2C; 
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            text-align: center; 
+        }
+
+        .subject:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+
+        .subjimg {
+            width: 200px; 
+            height: 200px; 
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .but {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #FFFFFF;
+            background-color: #444444; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .but:hover {
+            background-color: #666666;
+            transform: scale(1.05);
+        }
+
+        .subj {
+            color: #FFFFFF;
+            margin: 10px 0; 
+        }
+
+        
+
+
+
+
+.premium-section {
+    padding: 60px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.premium-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.plans {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.plan {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.plan:hover {
+    transform: scale(1.05);
+}
+
+.plan h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.plan .price {
+    font-size: 28px;
+    color: #2a9d8f;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.plan ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.plan .select-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f4a261;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.plan .select-btn:hover {
+    background-color: #e76f51;
+}
+
+/* Plan-specific styles */
+.basic-plan {
+    border-color: #2a9d8f;
+}
+
+.pro-plan {
+    border-color: #f4a261;
+}
+
+.advance-plan {
+    border-color: #e76f51;
+}
+.faq {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #2f3e46; /* Dark gray for the heading */
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff; /* White background for the FAQ items */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item summary {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 15px;
+    background-color: #b0bec5; /* Soft light grayish-blue for the summary */
+    color: #ffffff;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.faq-item summary:hover {
+    background-color: #78909c; /* Slightly darker blue-gray on hover */
+}
+
+.faq-item[open] summary {
+    background-color: #78909c; /* Active state */
+}
+
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.faq-item[open] summary::after {
+    content: '-';
+}
+
+.faq-item p {
+    padding: 20px;
+    background-color: #f4f5f7; /* Light gray for content background */
+    color: #333; /* Dark gray for text */
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    border-top: 1px solid #ddd;
+}
+
+.summary, .content_ {
+    font-family: 'Poppins', sans-serif; /* Elegant font for FAQs */
+}
+
+/* Animations */
+details summary {
+    transition: background-color 0.3s ease;
+}
+
+details[open] p {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+.footer22{
+    background-color: #6D6D6D;
+    margin-bottom: 0;
+    padding: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color:#ededf0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.fp{
+    text-align: center;
+    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.fh{
+    text-align: center;
+    padding-top: 20px;
+    
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif 
+    ;
+    font-weight: lighter;
+}
+.button22{
+    margin-left: 30px;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    background-color: rgb(44, 43, 43);
+    cursor: pointer;
+}
+.button22:hover {
+    background-color: #555;
+}
+
+.input22{
+    margin-left: 30px;
+    border-color: #333333;
+
+    width: 340px;
+    height: 45px;
+    background-color:#333333;
+    font-size: 16px;
+    color:#9e9696;
+    padding-left: 10px;
+}
+.textarea22{
+    margin-left: 30px;
+    width: 350px;
+    background-color:#333333;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+}
+.map22{
+    margin-top:2px;
+    margin-left:90px;
+    width:45%;
+    height:225px;
+}
+.containerfoot{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 50px;
+}
+.image-container22{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 10px;
+
+}
+.image-container22 img{
+
+    height: 30px;
+    width: 30px;
+    margin: 0 3px; 
+    padding: 7px;
+ 
+    
+}
+.cf{
+    width: 30%;
+}
+iframe{
+    width: 90%;
+    height: 100%;
+    border: none;
+}
+.map-details22 {
+    margin-top: 0px;
+    font-size: 15px;
+    width: 30%;
+    margin-left:0px;
+
+}
+
+.map-details22 p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.email{
+    height:30px;
+    width: 30px;
+}
+.clock{
+height: 30px;
+width: 30px;
+}
+.phone{
+    height:25px;
+    width:25px;
+}
+.info {
+    text-align: left;
+    padding-left: 3px;
+}
+.cpr{
+text-align: center;
+}
+
+
+.loc{
+    height:25px;
+width: 25px;  
+padding: 0px;    
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/18018203/434482_69931.png" alt="Quiz Rizz Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Subjects</a></li>
+            <li><a href="#">Study Material</a></li>
+            <li><a href="#">Premium</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="#" class="signup-btn">Signup</a>
+            <a href="#" class="login-btn">Login</a>
+            
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <h1>Welcome to QUIZ RIZZ</h1>
+            <p>The ultimate quiz platform for students</p>
+        </div>
+    </section>
+
+    <main class="Aboutusmain">
+        <h1>About Us</h1>
+
+            <br>
+             Your ultimate quiz destination! We're passionate about creating engaging and educational experiences for quiz enthusiasts.</p>
+    
+    <br>
+    <br>
+
+    <section class=" features">
+        <h2 class="section-title">Key Features</h2>
+        <ul>
+            <li><i class="fas fa-check-star"></i> Multiple quiz categories (History, Science and more)</li>
+            <li><i class="fas fa-check-star"></i> Interactive quiz interface with different difficulty levels.</li>
+            <li><i class="fas fa-check-star"></i> Mobile-friendly design for on-the-go quizzing</li>
+            <li><i class="fas fa-check-star"></i> Regularly updated question bank</li>
+            <li><i class="fas fa-check-star"></i> Secure and private user data</li>
+        </ul>
+    </section>
+
+    <section class="Aboutussection">
+        <h2 class="section-title">Why Choose QuizRizz?</h2>
+        <div class="why-choose-us">
+            <div class="advantage-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WSjkJ6TTbuZHpuxEhAXMBYU-X8wFn-BwFQ&s" alt="Enhancing Knowledge & Skills">
+                <h3>Enhance Knowledge & Skills</h3>
+                <p>Expand your knowledge in various subjects, from history to science, while improving your skills through interactive quizzing.</p>
+            </div>
+
+            <div class="advantage-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6lhGH3mNC6tZWfrSUqd2Z3EDucCY-6NiHQ&s" alt="Critical Thinking">
+                <h3>Boost Critical Thinking</h3>
+                <p>Challenge your mind and enhance your critical thinking abilities by solving thought-provoking questions.</p>
+            </div>
+
+            <div class="advantage-box">
+                <img src="https://thehardcopy.co/wp-content/uploads/kab-banega.jpg" alt="Leaderboard Competition">
+                <h3>Productive Entertainment</h3>
+                <p>A unique blend of entertainment and education, making it the perfect destination for those seeking productive leasure. </p>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Enhanced Our Mission Section -->
+    <section class="mission">
+        <h2>Our Mission</h2>
+        <p>At QuizRizz, our mission is to spark curiosity and foster learning in a fun and engaging way. We believe that education doesn’t have to be boring, and we’re dedicated to providing a platform that makes learning interactive, competitive, and enjoyable for everyone. We aim to create a community where knowledge is celebrated, curiosity is encouraged, and everyone can sharpen their minds while having fun.</p>
+    </section>
+
+    <!-- New Fun Facts Section -->
+    <section class="fun-facts">
+        <h2>Quiz Facts</h2>
+        <div class="facts-grid">
+            <div class="fact-box">
+                <h3>Quiz Fever!!</h3>
+                <p>The average person spends 16 days of their life taking quizzes online!!</p>
+            </div>
+
+            <div class="fact-box">
+               <h3>Paws-itively Popular Topics!</h3>
+                <p>Did you know? The most popular quiz topics are animals and pop culture!</p>
+            </div>
+
+            <div class="fact-box">
+               <h3>Brain Booster!</h3>
+                <p>Quizzes can boost knowledge retention by up to 70%!</p>
+            </div>
+
+            <div class="fact-box">
+               <h3>Quiz Time, All the Time!</h3>
+                <p>Our team loves quizzes so much, we even quiz each other during meetings!</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<div class="quiz">
+    <h1 class="k">Our Subjects</h1>
+    <h3 class="a">Master your subjects with our interactive quizzes</h3>
+    <div class="ktube">
+        <section class="subject">
+            <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/138744_830259.jpeg" alt="Mathematics">                                            
+            <h2 class="subj">Mathematics</h2>
+            <p>Our mathematics quizzes are designed to strengthen your problem-solving skills and enhance your understanding of key concepts, from basic arithmetic to advanced calculus.</p>        
+            <button class="but">START QUIZ</button>
+        </section>
+
+        <section class="subject">
+            <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/953446_989058.jpeg" alt="Physics">
+            <h2 class="subj">Physics</h2>  
+            <p>The physics quiz is a journey into the laws of nature, testing your grasp of motion, energy, and the forces that govern our universe.</p>
+            <button class="but">START QUIZ</button>
+        </section>
+
+        <section class="subject">
+            <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/795623_660041.jpeg" alt="Chemistry">
+            <h2 class="subj">Chemistry</h2>
+            <p>A chemistry quiz is an exciting journey through the reactions and elements that shape our world.</p>                  
+            <button class="but">START QUIZ</button>
+        </section>
+
+        <section class="subject">
+            <img class="subjimg" src="https://cdn.pixabay.com/photo/2018/09/06/18/49/bacteria-3658992_1280.jpg" alt="Biology">
+            <h2 class="subj">Biology</h2>
+            <p>A biology quiz invites you to dive into the wonders of life, from the tiniest cells to complex ecosystems.</p>
+            <button class="but">START QUIZ</button>
+        </section>
+
+        <section class="subject">
+            <img class="subjimg" src="https://i.ytimg.com/vi/F0Gkr4MBEO0/hqdefault.jpg" alt="History">
+            <h2 class="subj">History</h2>
+            <p>A history quiz takes you on a journey through time, testing your knowledge of the events that shaped our world.</p>              
+            <button class="but">START QUIZ</button>
+        </section>
+
+        <section class="subject">
+            <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/71239_897290.jpeg" alt="Geography">
+            <h2 class="subj">Geography</h2>
+            <p>A geography quiz takes you on a journey across diverse landscapes and cultures.</p>              
+            <button class="but">START QUIZ</button>
+        </section>
+
+        <section class="subject">
+            <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/917704_462630.png" alt="Economics">
+            <h2 class="subj">Economics</h2>
+            <p>An economics quiz challenges you to explore key concepts of supply and demand and market dynamics.</p>              
+            <button class="but">START QUIZ</button>
+        </section>
+
+        <section class="subject">
+            <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/417272_716520.jpeg" alt="Commerce">
+            <h2 class="subj">Commerce</h2>
+            <p>A commerce quiz tests your knowledge of the business world, from finance and trade to economics.</p>              
+            <button class="but">START QUIZ</button>
+        </section>
+
+        <section class="subject">
+            <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/498405_639076.jpeg" alt="General Knowledge">
+            <h2 class="subj">General Knowledge</h2>
+            <p>A General Knowledge quiz is an exciting journey through diverse topics, testing your awareness of the world!</p>              
+            <button class="but">START QUIZ</button>
+        </section>
+    </div>
+</div>
+
+
+
+
+    <div class="premium-section">
+        <h2>Premium Plans</h2>
+        <div class="plans">
+            <!-- Basic Plan -->
+            <div class="plan basic-plan">
+                <h3>Basic Plan</h3>
+                <p class="price">Free</p>
+                <ul>
+                    <li>Access to a vast library of study material</li>
+                    <li>Pre-recorded lectures</li>
+                    <li>Exam-specific quizzes</li>
+                </ul>
+                <a href="#" class="select-btn">Get Started</a>
+            </div>
+            
+            <!-- Pro Plan -->
+            <div class="plan pro-plan">
+                <h3>Pro Plan</h3>
+                <p class="price">₹399 / month</p>
+                <ul>
+                    <li>All benefits of Basic</li>
+                    <li>24/7 mentor support</li>
+                    <li>Access to quiz leaderboard</li>
+                </ul>
+                <a href="#" class="select-btn">Upgrade Now</a>
+            </div>
+            
+            <!-- Advance Plan -->
+            <div class="plan advance-plan">
+                <h3>Advance Plan</h3>
+                <p class="price">₹599 / month</p>
+                <ul>
+                    <li>All benefits of Pro Plan</li>
+                    <li>AI-powered assistance</li>
+                    <li>3D video illustrations</li>
+                </ul>
+                <a href="#" class="select-btn">Get Premium</a>
+            </div>
+        </div>
+    </div>
+        <!-- FAQ Section -->
+        <section class="faq" id="faq">
+            <h1>FAQs</h1>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <details>
+                        <summary class="summary">What is Quiz Rizz?</summary>
+                        <p class="content_">Quiz Rizz is an interactive online platform where users can solve quizzes on a wide range of topics, from general knowledge and current events to specialized subjects. It offers an engaging way to test your knowledge, improve your skills, and have fun while learning. Perfect for both casual learners and quiz enthusiasts, Quiz Rizz makes learning entertaining with its user-friendly interface and diverse quiz categories.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary class="summary">How can I start a quiz?</summary>
+                        <p class="content_">Simply navigate to the subject whose quiz you want to create, choose the difficulty, and you are good to go with your quiz.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary class="summary">What features are included in the Premium Plan?</summary>
+                        <p class="content_">The Premium Plan offers AI support, access to leaderboards, mentor support, and exclusive 3D video content to enhance your learning journey.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary class="summary">Is there a free version available?</summary>
+                        <p class="content_">Yes, we offer a basic free version that allows limited quiz creations and access to our study materials. Upgrade to Premium for more features.</p>
+                    </details>
+                </div>
+                <div class="faq-item">
+                    <details>
+                        <summary class="summary">How do I contact support?</summary>
+                        <p class="content_">You can reach out to our support team through the "Contact Us" link in the navbar or by emailing quizrizz10@gmail.com.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="footer22">
+            <h1 class="fh">Contact Us</h1>
+            <p class="fp">We're here to assist you with any questions or feedback</p>
+            <div class="containerfoot">
+                <div class="cf">
+                    <form>
+                        <input class="input22" type="text" placeholder="Name" required>
+                        <br><br>
+                        <input class="input22" type="email" placeholder="Email" required>
+                        <br><br>
+                        <textarea class="textarea22" placeholder="Message" required rows="4"></textarea>
+                        <br><br>
+                        <button class="button22" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="map22">
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100737.2029680308!2d80.97065864909837!3d26.86648696205908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399b8f4c1b0838b7%3A0xe91576e11e60d45a!2sIndian%20Institute%20of%20Information%20Technology%20Lucknow!5e0!3m2!1sen!2sin!4v1696523518744!5m2!1sen!2sin" 
+                    allowfullscreen="" 
+                    loading="lazy"></iframe>
+                </div>
+                <div class="map-details22">
+                    <p class="info"><img class="loc" src="https://cdn-icons-png.freepik.com/512/8025/8025330.png" alt="img">  Indian Institute of Information Technology Lucknow, Ahmamau, Lucknow, India.</p> <br>
+                    <p><img class="clock" src="https://cdn-icons-png.flaticon.com/512/8655/8655954.png" alt="cl">  Mon-Fri 10am-5pm, Sat 1pm-5pm</p><br>
+                    <p><img class="phone" src="https://i.pinimg.com/564x/44/9c/cb/449ccb8d7794945c6c2b30e3dbe09e68.jpg"> Phone : 75886317728</p><br>
+                    <p><img class="email" src="https://i.pinimg.com/474x/e1/54/70/e1547034edad1af998624b6ac8d83a08.jpg"> Email : quizrizz10@gmail.com</p>
+                </div>
+    
+            </div>
+    
+            <div class="image-container22">
+                <a href>
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEBFXCirT08g-Mqzt1m6oD1Z6Dw4Oc9XqwDw&s"></a>
+       <a href><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGGWFvs8Qvk6MzFRoFSdhkk_rRQOvIKvP9cQ&s"></a>
+       <a href><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+      <a href> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2nHeo6lNQM6sO5waCE4RNZlU-bnGWdc7RAg&s"></a>
+            </div>
+            
+            <p class="cpr">Copyright QuizRizz@2024</p>
+        </div>
+    
+</body>
+</html>
 
