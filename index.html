@@ -380,6 +380,87 @@ i {
             margin: 10px 0; 
         }
 
+
+
+                .containerfornews {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .title-header {
+            text-align: center;
+            color: #222;
+            margin-bottom: 30px;
+            font-size: 34px;
+        }
+
+        .title-header img {
+            margin-left: 10px;
+            width: 42px;
+            height: 42px;
+            vertical-align: middle;
+            border-radius: 10px;
+        }
+
+        section.global-events, section.dropdown-section {
+            margin-bottom: 40px;
+        }
+
+        .global-events-header, .dropdown-header {
+            background: linear-gradient(135deg, #4A90E2, #50C9C3);
+            color: #FFF;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 12px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .global-events-header img, .dropdown-header img {
+            margin-right: 12px;
+            width: 35px;
+            height: 35px;
+            border-radius: 5px;
+        }
+
+        .dropdown-content, .global-news-content {
+            padding: 15px;
+            background-color: #F8F9FA;
+            border-radius: 8px;
+            margin-top: 8px;
+            color: #555;
+        }
+
+        .dropdown-content a, .global-news-content a {
+            text-decoration: none;
+            color: #1A73E8;
+            display: block;
+            padding: 10px 0;
+            transition: color 0.2s ease;
+        }
+
+        .dropdown-content a:hover, .global-news-content a:hover {
+            color: #34A853;
+        }
+
+        section.dropdown-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .title-header {
+                font-size: 28px;
+            }
+        }
+
         
 
 
@@ -898,6 +979,103 @@ details[open] p {
 
 
 
+        <div class="containerfornews">
+        <div class="title-header">
+            Ongoing Events in Various Subjects & Global News
+            <img src="https://w7.pngwing.com/pngs/57/960/png-transparent-computer-icons-online-newspaper-news-media-others-text-label-orange-thumbnail.png" alt="news">
+        </div>
+        
+
+        <section class="global-events">
+            <header class="global-events-header" aria-expanded="false">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Nobel_Prize.png/330px-Nobel_Prize.png" alt="Global Event Icon">
+                Global Current Events
+            </header>
+            <article class="global-news-content">
+                <a href="https://www.nobelprize.org/prizes/lists/all-nobel-prizes/">Nobel Prize Announcements</a>
+                <a href="#">Breakthrough in Cancer Research</a>
+                <a href="https://www.youtube.com/watch?v=GR46_ohNh9U&t=252s">Climate Change Summit</a>
+                <a href="https://www.ibm.com/think/insights/ai-trends">AI Advancements in Healthcare</a>
+                <a href="https://shorturl.at/X3D2T">New Discoveries in Space Exploration</a>
+            </article>
+        </section>
+
+        <section class="dropdown-section">
+            <article class="dropdown">
+                <header class="dropdown-header" aria-expanded="false">
+                    <img src="https://img.freepik.com/premium-vector/mathematics-circular-flat-illustration-vector-math-banner_104589-3151.jpg" alt="Math Icon">
+                    Maths
+                </header>
+                <div class="dropdown-content">
+                    <a href="#">Top Breakthroughs in Maths</a>
+                    <a href="#">Increase in computational power</a>
+                    <a href="#">Mathematics and computing emerging</a>
+                </div>
+            </article>
+
+            <article class="dropdown">
+                <header class="dropdown-header" aria-expanded="false">
+                    <img src="https://img.freepik.com/free-vector/atom-illustration-model-with-electrons-neutron-isolated_1284-53084.jpg?size=338&ext=jpg&ga=GA1.1.1819120589.1728432000&semt=ais_hybrid" alt="Physics Icon">
+                    Physics
+                </header>
+                <div class="dropdown-content">
+                    <a href="#">Physics simulations using AI developed</a>
+                    <a href="#">Astrophysics Symposium</a>
+                    <a href="#">How quantum computers work</a>
+                </div>
+            </article>
+
+            <article class="dropdown">
+                <header class="dropdown-header" aria-expanded="false">
+                    <img src="https://www.pngitem.com/pimgs/m/549-5492996_creative-chemistry-logo-design-hd-png-download.png" alt="Chemistry Icon">
+                    Chemistry
+                </header>
+                <div class="dropdown-content">
+                    <a href="https://www.youtube.com/watch?v=w8Zp87G9BmE">Top Chemistry Breakthroughs</a>
+                    <a href="https://www.youtube.com/watch?v=gg7WjuFs8F4">alfafold</a>
+                    <a href="https://www.youtube.com/watch?v=gg7WjuFs8F4">Biochemistry discoveries 2024</a>
+                </div>
+            </article>
+
+            <article class="dropdown">
+                <header class="dropdown-header" aria-expanded="false">
+                    <img src="https://cdn.pixabay.com/photo/2018/09/06/18/49/bacteria-3658992_1280.jpg" alt="Biology Icon">
+                    Biology
+                </header>
+                <div class="dropdown-content">
+                    <a href="https://www.youtube.com/watch?v=w8Zp87G9BmE">computational protein design</a>
+                    <a href="https://open.spotify.com/show/7bNsvg0hvsTZXCNoWXOjcu">Marine Biology as a career podcast</a>
+                </div>
+            </article>
+
+            <article class="dropdown">
+                <header class="dropdown-header" aria-expanded="false">
+                    <img src="https://www.shutterstock.com/image-vector/athens-famous-landmark-line-icon-260nw-1483781573.jpg" alt="History Icon">
+                    History
+                </header>
+                <div class="dropdown-content">
+                    <a href="https://www.archives.gov/research/military/ww2">World War II Exhibit</a>
+                    <a href="https://www.youtube.com/@WorldofAntiquity">Ancient Civilizations findings 2024</a>
+                    
+                </div>
+            </article>
+
+            <article class="dropdown">
+                <header class="dropdown-header" aria-expanded="false">
+                    <img src="https://png.pngtree.com/png-clipart/20201209/original/pngtree-geography-vector-icon-school-and-education-png-image_5515225.jpg" alt="Geography Icon">
+                    Geography
+                </header>
+                <div class="dropdown-content">
+                    <a href="https://www.nrdc.org/stories/global-warming-101#warming">Global warming and its impacts</a>
+                    <a href="https://en.wikipedia.org/wiki/Cartography">Cartography </a>
+                    <a href="https://www.kadn.com/news/only-on-news15/new-island-discovered-off-louisiana-coast-near-st-mary-parish/article_11cece76-5c24-11ef-a2f9-7bb6aab8fbb6.html">New regions discovered 2024</a>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    
+
 
     <div class="premium-section">
         <h2>Premium Plans</h2>
@@ -1010,7 +1188,7 @@ details[open] p {
 
 
 
-        <p class="fhead">Members:</p>
+        <p class="fhead">Members:</p><br>
 
         <div class="linkedinpr">
             
@@ -1034,7 +1212,7 @@ details[open] p {
                     </div>
         </div>
 
-        <p class="cpr">&copy; Copyright QuizRizz@2024</p>
+        <br><p class="cpr">&copy; Copyright QuizRizz@2024</p>
     </div>
 
     
