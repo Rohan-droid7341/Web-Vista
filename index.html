@@ -26,15 +26,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
-    background-color: rgba(255, 255, 255, 0.5); /* Initially semi-transparent */
-    backdrop-filter: blur(10px); /* Adds a blur effect */
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px); 
     transition: background-color 0.3s ease;
-}
-
-.content-section {
-    height: 1000px; /* Large section for scrolling */
-    padding: 20px;
-    background-color: #f4f4f4;
 }
 
 .navbar .logo img {
@@ -60,7 +54,7 @@ body {
 
 .auth-buttons {
     display: flex;
-    gap: 15px; /* Spacing between the login and signup buttons */
+    gap: 15px; 
 }
 
 .login-btn {
@@ -96,14 +90,13 @@ body {
     transform: scale(1.10);
 }
 
-/* Hero Section */
 .hero {
     background-image: url('https://images.unsplash.com/photo-1590010434276-ba3a98994476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your image */
     background-size: cover;
     color: white;
     background-position: center;
     background-repeat: no-repeat;
-    height: 75vh; /* Full screen height */
+    height: 75vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -455,12 +448,6 @@ i {
             gap: 20px;
         }
 
-        @media (max-width: 768px) {
-            .title-header {
-                font-size: 28px;
-            }
-        }
-
         
 
 
@@ -536,7 +523,7 @@ i {
     background-color: #e76f51;
 }
 
-/* Plan-specific styles */
+
 .basic-plan {
     border-color: #2a9d8f;
 }
@@ -559,7 +546,7 @@ i {
     font-family: 'Poppins', sans-serif;
     font-size: 48px;
     font-weight: 600;
-    color: #2f3e46; /* Dark gray for the heading */
+    color: #2f3e46; 
     margin-bottom: 30px;
 }
 
@@ -573,7 +560,7 @@ i {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    background-color: #ffffff; /* White background for the FAQ items */
+    background-color: #ffffff; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
 }
@@ -588,7 +575,7 @@ i {
     font-weight: 600;
     cursor: pointer;
     padding: 15px;
-    background-color: #b0bec5; /* Soft light grayish-blue for the summary */
+    background-color: #b0bec5; 
     color: #ffffff;
     border-radius: 8px 8px 0 0;
     position: relative;
@@ -596,11 +583,11 @@ i {
 }
 
 .faq-item summary:hover {
-    background-color: #78909c; /* Slightly darker blue-gray on hover */
+    background-color: #78909c; 
 }
 
 .faq-item[open] summary {
-    background-color: #78909c; /* Active state */
+    background-color: #78909c; 
 }
 
 .faq-item summary::after {
@@ -617,8 +604,8 @@ i {
 
 .faq-item p {
     padding: 20px;
-    background-color: #f4f5f7; /* Light gray for content background */
-    color: #333; /* Dark gray for text */
+    background-color: #f4f5f7; 
+    color: #333; 
     font-size: 18px;
     line-height: 1.6;
     margin: 0;
@@ -626,10 +613,10 @@ i {
 }
 
 .summary, .content_ {
-    font-family: 'Poppins', sans-serif; /* Elegant font for FAQs */
+    font-family: 'Poppins', sans-serif; 
 }
 
-/* Animations */
+
 details summary {
     transition: background-color 0.3s ease;
 }
@@ -637,16 +624,6 @@ details summary {
 details[open] p {
     animation: fadeIn 0.5s;
 }
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 
 
 
@@ -802,7 +779,7 @@ details[open] p {
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <nav class="navbar">
         <div class="logo">
             <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/18018203/434482_69931.png" alt="Quiz Rizz Logo">
@@ -815,13 +792,13 @@ details[open] p {
             <li><a href="#">About Us</a></li>
         </ul>
         <div class="auth-buttons">
-            <a href="#" class="signup-btn">Signup</a>
-            <a href="#" class="login-btn">Login</a>
+            <a href="Signup.html" class="signup-btn">Signup</a>
+            <a href="Login.html" class="login-btn">Login</a>
             
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    
     <section class="hero">
         <div class="content">
             <h1>Welcome to QUIZ RIZZ</h1>
@@ -874,13 +851,13 @@ details[open] p {
         </div>
     </section>
 
-    <!-- Enhanced Our Mission Section -->
+
     <section class="mission">
         <h2>Our Mission</h2>
         <p>At QuizRizz, our mission is to spark curiosity and foster learning in a fun and engaging way. We believe that education doesn’t have to be boring, and we’re dedicated to providing a platform that makes learning interactive, competitive, and enjoyable for everyone. We aim to create a community where knowledge is celebrated, curiosity is encouraged, and everyone can sharpen their minds while having fun.</p>
     </section>
 
-    <!-- New Fun Facts Section -->
+
     <section class="fun-facts">
         <h2>Quiz Facts</h2>
         <div class="facts-grid">
@@ -1080,7 +1057,7 @@ details[open] p {
     <div class="premium-section">
         <h2>Premium Plans</h2>
         <div class="plans">
-            <!-- Basic Plan -->
+
             <div class="plan basic-plan">
                 <h3>Basic Plan</h3>
                 <p class="price">Free</p>
@@ -1092,7 +1069,7 @@ details[open] p {
                 <a href="#" class="select-btn">Get Started</a>
             </div>
             
-            <!-- Pro Plan -->
+
             <div class="plan pro-plan">
                 <h3>Pro Plan</h3>
                 <p class="price">₹399 / month</p>
@@ -1104,7 +1081,7 @@ details[open] p {
                 <a href="#" class="select-btn">Upgrade Now</a>
             </div>
             
-            <!-- Advance Plan -->
+
             <div class="plan advance-plan">
                 <h3>Advance Plan</h3>
                 <p class="price">₹599 / month</p>
@@ -1117,7 +1094,7 @@ details[open] p {
             </div>
         </div>
     </div>
-        <!-- FAQ Section -->
+
         <section class="faq" id="faq">
             <h1>FAQs</h1>
             <div class="faq-container">
