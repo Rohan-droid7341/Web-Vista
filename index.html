@@ -375,7 +375,10 @@ i {
 
 
 
-                .containerfornews {
+
+        .containerfornews {
+            background-color: #F2F3F4;
+            color: #333;
             max-width: 1200px;
             margin: 50px auto;
             padding: 20px;
@@ -448,6 +451,7 @@ i {
             gap: 20px;
         }
 
+        
         
 
 
@@ -627,7 +631,7 @@ details[open] p {
 
 
 
-        .footer22{
+           .footer22{
             background-color: #6D6D6D;
             margin-bottom: 0;
             padding: 20px;
@@ -775,6 +779,15 @@ details[open] p {
     margin-left: 210px;
     font-size: 25px;
   }
+  .social-icons img{
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+    
+  }
+  .social-icons{
+    margin-left: 500px;
+  }
 
     </style>
 </head>
@@ -785,11 +798,12 @@ details[open] p {
             <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/18018203/434482_69931.png" alt="Quiz Rizz Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Subjects</a></li>
+            <li><a href="#1">Home</a></li>
+            <li><a href="#2">Subjects</a></li>
+            <li><a href="#3">Events</a></li>
             <li><a href="#">Study Material</a></li>
-            <li><a href="#">Premium</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#4">Premium</a></li>
+            <li><a href="#6">About Us</a></li>
         </ul>
         <div class="auth-buttons">
             <a href="Signup.html" class="signup-btn">Signup</a>
@@ -800,13 +814,13 @@ details[open] p {
 
     
     <section class="hero">
-        <div class="content">
+        <div class="content" id="1" >
             <h1>Welcome to QUIZ RIZZ</h1>
             <p>The ultimate quiz platform for students</p>
         </div>
     </section>
 
-    <main class="Aboutusmain">
+    <main class="Aboutusmain" id="6">
         <h1>About Us</h1>
 
             <br>
@@ -885,7 +899,7 @@ details[open] p {
 </main>
 
 
-    <div class="quiz">
+    <div class="quiz" id="2">
         <h1 class="k">Our Subjects</h1>
         <h3 class="a">Master your subjects with our interactive quizzes</h3>
         <div class="ktube">
@@ -956,7 +970,7 @@ details[open] p {
 
 
 
-        <div class="containerfornews">
+    <div class="containerfornews" id="3">
         <div class="title-header">
             Ongoing Events in Various Subjects & Global News
             <img src="https://w7.pngwing.com/pngs/57/960/png-transparent-computer-icons-online-newspaper-news-media-others-text-label-orange-thumbnail.png" alt="news">
@@ -1039,7 +1053,7 @@ details[open] p {
 
             <article class="dropdown">
                 <header class="dropdown-header" aria-expanded="false">
-                    <img src="https://png.pngtree.com/png-clipart/20201209/original/pngtree-geography-vector-icon-school-and-education-png-image_5515225.jpg" alt="Geography Icon">
+                    <img src="https://img.freepik.com/free-vector/earth-globe-world-cartoon-vector-icon-illustration-education-object-icon-isolated-flat-vector_138676-13140.jpg" alt="Geography Icon">
                     Geography
                 </header>
                 <div class="dropdown-content">
@@ -1054,7 +1068,7 @@ details[open] p {
     
 
 
-    <div class="premium-section">
+    <div class="premium-section" id="4">
         <h2>Premium Plans</h2>
         <div class="plans">
 
@@ -1132,7 +1146,7 @@ details[open] p {
         </section>
 
 
-    <div class="footer22">
+  <div class="footer22">
         <h1 class="fh">Contact Us</h1>
         <p class="fp">We're here to assist you with any questions or feedback</p>
         <div class="containerfoot">
@@ -1165,7 +1179,7 @@ details[open] p {
 
 
 
-        <p class="fhead">Members:</p><br>
+        <p class="fhead">Members:</p>
 
         <div class="linkedinpr">
             
@@ -1189,8 +1203,24 @@ details[open] p {
                     </div>
         </div>
 
-        <br><p class="cpr">&copy; Copyright QuizRizz@2024</p>
+
+        <div class="social-icons">
+            
+           <a href="/"><img src="https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo_instagram-512.png"></a>
+      
+      <a href="/"><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png"></a>
+      <a href="/"><img src="https://i.pinimg.com/564x/6b/ab/30/6bab3017350ca04c6fa05569672bd31e.jpg"></a>
+      <a href="/"><img src="https://art.pixilart.com/47700d2e75da.png"></a>
+        </div>
+
+
+
+
+
+
+        <p class="cpr">&copy; Copyright QuizRizz@2024</p>
     </div>
+
 
     
 </body>
