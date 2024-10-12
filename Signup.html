@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizrizz - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQkTyY0Vxg0ZFPz3+g6Q1XjSg2gHeB2oB5dP+K2WJXk8jVFy0xsm7pTWkD7bN6LvChE7xO+YVg+f9wCug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .signup-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 500px;
+            max-width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .signup-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        .signup-container img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+        .signup-container h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .signup-form .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .signup-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+        .signup-form input[type="text"],
+        .signup-form input[type="email"],
+        .signup-form input[type="tel"],
+        .signup-form input[type="password"],
+        .signup-form select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #b0bec5;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .signup-form input[type="text"]:focus,
+        .signup-form input[type="email"]:focus,
+        .signup-form input[type="tel"]:focus,
+        .signup-form input[type="password"]:focus,
+        .signup-form select:focus {
+            border-color: #0288d1;
+            outline: none;
+        }
+        .signup-form .radio-group {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .signup-form .radio-group label {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .signup-form .radio-group input {
+            margin-right: 8px;
+        }
+        .signup-form .terms {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .signup-form .terms input {
+            margin-right: 10px;
+        }
+        .signup-form .submit-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            background-color: #0288d1;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .signup-form .submit-btn:hover {
+            background-color: #0277bd;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #b0bec5;
+        }
+        .divider::before {
+            margin-right: 10px;
+        }
+        .divider::after {
+            margin-left: 10px;
+        }
+        .social-signup button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        .social-signup button i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        .google-signup { background-color: #db4437; }
+        .google-signup:hover { background-color: #c33d2e; }
+        .facebook-signup { background-color: #3b5998; }
+        .facebook-signup:hover { background-color: #334d84; }
+        .iiitl-signup { background-color: #ff9800; }
+        .iiitl-signup:hover { background-color: #e68900; }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .footer a {
+            color: #0288d1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .signup-container {
+                padding: 30px 20px;
+            }
+            .signup-container h2 {
+                font-size: 24px;
+            }
+            .signup-form .radio-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .signup-form .radio-group label {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/18018203/434482_69931.png" alt="Quizrizz Logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/100x100.png?text=Quizrizz';">
+        <h2>Welcome to Quizrizz</h2>
+        <form class="signup-form" action="signup_process.php" method="post">
+            <div class="input-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+            </div>
+            <div class="input-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female" required> Female</label>
+                    <label><input type="radio" name="gender" value="other" required> Other</label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Who Are You?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="role" value="teacher" required> Teacher</label>
+                    <label><input type="radio" name="role" value="parent" required> Parent</label>
+                    <label><input type="radio" name="role" value="student" required> Student</label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="education">Educational Qualification</label>
+                <select id="education" name="education" required>
+                    <option value="" disabled selected>Select your qualification</option>
+                    <option value="high-school">High School</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="postgraduate">Postgraduate</option>
+                    <option value="phd">PhD</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+            <div class="input-group terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+            </div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        <div class="divider">or</div>
+        <div class="social-signup">
+            <button class="google-signup"><i class="fab fa-google"></i> Sign Up with Google</button>
+            <button class="facebook-signup"><i class="fab fa-facebook-f"></i> Sign Up with Facebook</button>
+            <button class="iiitl-signup"><i class="fas fa-user-graduate"></i> Sign Up with IIITL Account</button>
+        </div>
+        <div class="footer">
+            <p>Already have an account? <a href="Login.html">Login here</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
