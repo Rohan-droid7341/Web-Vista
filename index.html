@@ -788,6 +788,42 @@ details[open] p {
   .social-icons{
     margin-left: 500px;
   }
+  #dark-mode-toggle{
+   
+      
+    
+    background-color: #e74c3c;
+    color: #ffffff; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  #dark-mode-toggle:hover {
+    background-color: #c0392b; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  }
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .navbar {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .navbar a {
+    color: #1abc9c;
+  }
+ 
+  
 
     </style>
 </head>
@@ -1213,7 +1249,28 @@ details[open] p {
       <a href="/"><img src="https://art.pixilart.com/47700d2e75da.png"></a>
         </div>
 
+        <footer class="text-center py-4">
+            <button id="dark-mode-toggle" class="btn btn-primary">Enable Dark Mode</button>
+          
+            <script>
+                const toggleButton = document.getElementById('dark-mode-toggle');
 
+                toggleButton.addEventListener('click', () => {
+                  const body = document.body;
+                
+                  if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    body.classList.add('light-mode');
+                    toggleButton.textContent = 'Enable Dark Mode';
+                  } else {
+                    body.classList.remove('light-mode');
+                    body.classList.add('dark-mode');
+                    toggleButton.textContent = 'Disable Dark Mode';
+                  }
+                });
+                
+            </script>
+          </footer>
 
 
 
