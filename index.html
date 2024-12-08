@@ -1,301 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Rizz</title>
-    
+
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family:  Helvetica, sans-serif, sans-serif;
-}
+        body {
+            font-family: Helvetica, sans-serif, sans-serif;
+        }
 
-.navbar {
-    position: fixed; /* Sticks to the top */
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px;
-    background-color: rgba(255, 255, 255, 0.5); 
-    backdrop-filter: blur(10px); 
-    transition: background-color 0.3s ease;
-}
+        .navbar {
+            position: fixed;
+            /* Sticks to the top */
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease;
+        }
 
-.navbar .logo img {
-    width: 100px;
-}
+        .navbar .logo img {
+            width: 100px;
+        }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
 
-.navbar ul li a {
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    font-weight: bold;
-}
+        .navbar ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: black;
+            font-weight: bold;
+        }
 
-.navbar ul li a:hover {
-    text-decoration: underline;
-}
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
 
-.auth-buttons {
-    display: flex;
-    gap: 15px; 
-}
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
 
-.login-btn {
+        .login-btn {
 
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(104, 85, 224, 1);
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 1);
+            border: 1px solid rgba(104, 85, 224, 1);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
-.login-btn:hover {
-    color: white;
-    box-shadow: 0px 0px 20px 5px darkgrey;
-    background-color: rgba(104, 85, 224, 1);
-    transform: scale(1.10);
-}
+        .login-btn:hover {
+            color: white;
+            box-shadow: 0px 0px 20px 5px darkgrey;
+            background-color: rgba(104, 85, 224, 1);
+            transform: scale(1.10);
+        }
 
-.signup-btn {
-    color: white;
-    background-color: rgba(104, 85, 224, 1);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
+        .signup-btn {
+            color: white;
+            background-color: rgba(104, 85, 224, 1);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
-.signup-btn:hover {
-    color: white;
-    box-shadow: 0px 0px 20px 5px darkgrey;
-    background-color: rgba(104, 85, 224, 1);
-    transform: scale(1.10);
-}
+        .signup-btn:hover {
+            color: white;
+            box-shadow: 0px 0px 20px 5px darkgrey;
+            background-color: rgba(104, 85, 224, 1);
+            transform: scale(1.10);
+        }
 
-.hero {
-    background-image: url('https://images.unsplash.com/photo-1590010434276-ba3a98994476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your image */
-    background-size: cover;
-    color: white;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 75vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1590010434276-ba3a98994476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            /* Replace with your image */
+            background-size: cover;
+            color: white;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-.hero .content {
-    max-width: 600px;
-}
+        .hero .content {
+            max-width: 600px;
+        }
 
-.hero h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-}
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
 
-.hero p {
-    font-size: 25px;
-    
-}
+        .hero p {
+            font-size: 25px;
 
-.Aboutusheader {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-}
+        }
 
-
-.Aboutusmain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em;
-}
-
-.Aboutus{
-    background-image: linear-gradient(to bottom, #f7f7f7, #fff);
-    padding: 2em;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-}
-
-.Aboutussection {
-    width: 100%;
-    max-width: 1200px;
-    padding: 2em;
-}
-
-.features {
-    background-color: #d6d3d3;
-    padding: 2em;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width:70% ;
-}
-
-.features ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.features li {
-    margin-bottom: 10px;
-}
-
-i {
-    font-size: 18px;
-    margin-right: 10px;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-.why-choose-us {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 2em;
-}
-
-.why-choose-us .advantage-box {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.why-choose-us .advantage-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.advantage-box img {
-    width: 200px;
-    height: 125px;
-    object-fit: cover;
-    border-radius:0%;
-    margin-bottom: 8px;
-}
-
-.advantage-box h3 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-}
-
-.advantage-box p {
-    font-size: 1em;
-    color: #666;
-}
-
-.mission {
-    background-color: #eef7ff;
-    padding: 3em;
-    text-align: center;
-    margin-top: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.mission h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #2c3e50;
-}
-
-.mission p {
-    font-size: 1.2em;
-    color: #34495e;
-    line-height: 1.6;
-}
-
-.mission img {
-    max-width: 120px;
-    margin-top: 20px;
-}
-
-.fun-facts {
-    background-color: #d6d3d3;
-    padding: 3em;
-    margin-top: 40px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.fun-facts h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #1a271f;
-}
-
-.fun-facts .facts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.fact-box {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-}
-
-.fact-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.fact-box h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.fact-box p {
-    font-size: 1em;
-    color: #666;
-}
-
-.fact-box img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
+        .Aboutusheader {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
 
 
-         .quiz {
+        .Aboutusmain {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+        }
+
+        .Aboutus {
+            background-image: linear-gradient(to bottom, #f7f7f7, #fff);
+            padding: 2em;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .Aboutussection {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2em;
+        }
+
+        .features {
+            background-color: #d6d3d3;
+            padding: 2em;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 70%;
+        }
+
+        .features ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+        }
+
+        i {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .why-choose-us {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 2em;
+        }
+
+        .why-choose-us .advantage-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .why-choose-us .advantage-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .advantage-box img {
+            width: 200px;
+            height: 125px;
+            object-fit: cover;
+            border-radius: 0%;
+            margin-bottom: 8px;
+        }
+
+        .advantage-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .advantage-box p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .mission {
+            background-color: #eef7ff;
+            padding: 3em;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .mission h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .mission p {
+            font-size: 1.2em;
+            color: #34495e;
+            line-height: 1.6;
+        }
+
+        .mission img {
+            max-width: 120px;
+            margin-top: 20px;
+        }
+
+        .fun-facts {
+            background-color: #d6d3d3;
+            padding: 3em;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .fun-facts h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #1a271f;
+        }
+
+        .fun-facts .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .fact-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+        .fact-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .fact-box h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .fact-box p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .fact-box img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+
+        .quiz {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -308,25 +311,25 @@ i {
         }
 
         .k {
-            color: #FFFFFF; 
+            color: #FFFFFF;
             margin: 0 0 20px;
         }
 
         .a {
-            color: #B0B0B0; 
+            color: #B0B0B0;
             margin: 0 0 30px;
         }
 
         .ktube {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); 
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             width: 100%;
             max-width: 1200px;
         }
 
         .subject {
-            background-color: #2C2C2C; 
+            background-color: #2C2C2C;
             padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -334,8 +337,8 @@ i {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column;
-            align-items: center; 
-            text-align: center; 
+            align-items: center;
+            text-align: center;
         }
 
         .subject:hover {
@@ -344,8 +347,8 @@ i {
         }
 
         .subjimg {
-            width: 200px; 
-            height: 200px; 
+            width: 200px;
+            height: 200px;
             border-radius: 5px;
             object-fit: cover;
         }
@@ -354,7 +357,7 @@ i {
             padding: 10px 20px;
             font-size: 16px;
             color: #FFFFFF;
-            background-color: #444444; 
+            background-color: #444444;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -370,7 +373,7 @@ i {
 
         .subj {
             color: #FFFFFF;
-            margin: 10px 0; 
+            margin: 10px 0;
         }
 
 
@@ -402,11 +405,13 @@ i {
             border-radius: 10px;
         }
 
-        section.global-events, section.dropdown-section {
+        section.global-events,
+        section.dropdown-section {
             margin-bottom: 40px;
         }
 
-        .global-events-header, .dropdown-header {
+        .global-events-header,
+        .dropdown-header {
             background: linear-gradient(135deg, #4A90E2, #50C9C3);
             color: #FFF;
             padding: 15px;
@@ -418,14 +423,16 @@ i {
             justify-content: center;
         }
 
-        .global-events-header img, .dropdown-header img {
+        .global-events-header img,
+        .dropdown-header img {
             margin-right: 12px;
             width: 35px;
             height: 35px;
             border-radius: 5px;
         }
 
-        .dropdown-content, .global-news-content {
+        .dropdown-content,
+        .global-news-content {
             padding: 15px;
             background-color: #F8F9FA;
             border-radius: 8px;
@@ -433,7 +440,8 @@ i {
             color: #555;
         }
 
-        .dropdown-content a, .global-news-content a {
+        .dropdown-content a,
+        .global-news-content a {
             text-decoration: none;
             color: #1A73E8;
             display: block;
@@ -441,7 +449,8 @@ i {
             transition: color 0.2s ease;
         }
 
-        .dropdown-content a:hover, .global-news-content a:hover {
+        .dropdown-content a:hover,
+        .global-news-content a:hover {
             color: #34A853;
         }
 
@@ -451,210 +460,214 @@ i {
             gap: 20px;
         }
 
-        
-        
 
 
 
-.premium-section {
-    padding: 60px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.premium-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.plans {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
-}
-
-.plan {
-    background-color: white;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 30px;
-    width: 250px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.plan:hover {
-    transform: scale(1.05);
-}
-
-.plan h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.plan .price {
-    font-size: 28px;
-    color: #2a9d8f;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.plan ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-}
-
-.plan ul li {
-    margin-bottom: 10px;
-    color: #555;
-}
-
-.plan .select-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f4a261;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.plan .select-btn:hover {
-    background-color: #e76f51;
-}
 
 
-.basic-plan {
-    border-color: #2a9d8f;
-}
+        .premium-section {
+            padding: 60px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
 
-.pro-plan {
-    border-color: #f4a261;
-}
+        .premium-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
 
-.advance-plan {
-    border-color: #e76f51;
-}
-.faq {
-    padding: 60px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        .plans {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
 
-.faq h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 48px;
-    font-weight: 600;
-    color: #2f3e46; 
-    margin-bottom: 30px;
-}
+        .plan {
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 30px;
+            width: 250px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-.faq-container {
-    max-width: 800px;
-    width: 100%;
-}
+        .plan:hover {
+            transform: scale(1.05);
+        }
 
-.faq-item {
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #ffffff; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
+        .plan h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
 
-.faq-item:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
+        .plan .price {
+            font-size: 28px;
+            color: #2a9d8f;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
 
-.faq-item summary {
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 15px;
-    background-color: #b0bec5; 
-    color: #ffffff;
-    border-radius: 8px 8px 0 0;
-    position: relative;
-    transition: background-color 0.3s;
-}
+        .plan ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
 
-.faq-item summary:hover {
-    background-color: #78909c; 
-}
+        .plan ul li {
+            margin-bottom: 10px;
+            color: #555;
+        }
 
-.faq-item[open] summary {
-    background-color: #78909c; 
-}
+        .plan .select-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f4a261;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
-.faq-item summary::after {
-    content: '+';
-    position: absolute;
-    right: 15px;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.faq-item[open] summary::after {
-    content: '-';
-}
-
-.faq-item p {
-    padding: 20px;
-    background-color: #f4f5f7; 
-    color: #333; 
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 0;
-    border-top: 1px solid #ddd;
-}
-
-.summary, .content_ {
-    font-family: 'Poppins', sans-serif; 
-}
+        .plan .select-btn:hover {
+            background-color: #e76f51;
+        }
 
 
-details summary {
-    transition: background-color 0.3s ease;
-}
+        .basic-plan {
+            border-color: #2a9d8f;
+        }
 
-details[open] p {
-    animation: fadeIn 0.5s;
-}
+        .pro-plan {
+            border-color: #f4a261;
+        }
+
+        .advance-plan {
+            border-color: #e76f51;
+        }
+
+        .faq {
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .faq h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #2f3e46;
+            margin-bottom: 30px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-item summary {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 15px;
+            background-color: #b0bec5;
+            color: #ffffff;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+
+        .faq-item summary:hover {
+            background-color: #78909c;
+        }
+
+        .faq-item[open] summary {
+            background-color: #78909c;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .faq-item[open] summary::after {
+            content: '-';
+        }
+
+        .faq-item p {
+            padding: 20px;
+            background-color: #f4f5f7;
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .summary,
+        .content_ {
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        details summary {
+            transition: background-color 0.3s ease;
+        }
+
+        details[open] p {
+            animation: fadeIn 0.5s;
+        }
 
 
 
-           .footer22{
+        .footer22 {
             background-color: #6D6D6D;
             margin-bottom: 0;
             padding: 20px;
             margin-bottom: 0px;
             margin-left: 0px;
             margin-right: 0px;
-            color:#ededf0;
+            color: #ededf0;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
-        .fp{
+
+        .fp {
             text-align: center;
-            
+
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
-        .fh{
+
+        .fh {
             text-align: center;
             padding-top: 20px;
-            
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif 
-            ;
+
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-weight: lighter;
         }
-        .button22{
+
+        .button22 {
             margin-left: 30px;
             padding: 15px 20px;
             font-size: 16px;
@@ -663,56 +676,62 @@ details[open] p {
             background-color: rgb(44, 43, 43);
             cursor: pointer;
         }
+
         .button22:hover {
             background-color: #555;
         }
 
-        .input22{
+        .input22 {
             margin-left: 30px;
             border-color: #333333;
 
             width: 340px;
             height: 45px;
-            background-color:#333333;
+            background-color: #333333;
             font-size: 16px;
-            color:#9e9696;
+            color: #9e9696;
             padding-left: 10px;
         }
-        .textarea22{
+
+        .textarea22 {
             margin-left: 30px;
             width: 350px;
-            background-color:#333333;
+            background-color: #333333;
             font-size: 16px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             padding-left: 10px;
         }
-        .map22{
-            margin-top:2px;
-            margin-left:90px;
-            width:45%;
-            height:225px;
+
+        .map22 {
+            margin-top: 2px;
+            margin-left: 90px;
+            width: 45%;
+            height: 225px;
         }
-        .containerfoot{
+
+        .containerfoot {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin: 50px;
         }
-        
-        .cf{
+
+        .cf {
             width: 30%;
         }
-        iframe{
+
+        iframe {
             width: 90%;
             height: 100%;
             border: none;
         }
+
         .map-details22 {
             margin-top: 0px;
             font-size: 15px;
             width: 30%;
-            margin-left:0px;
-        
+            margin-left: 0px;
+
         }
 
         .map-details22 p {
@@ -720,118 +739,152 @@ details[open] p {
             align-items: center;
             margin: 0;
         }
-        .email{
-            height:30px;
+
+        .email {
+            height: 30px;
             width: 30px;
         }
-        .clock{
-     height: 30px;
-     width: 30px;
+
+        .clock {
+            height: 30px;
+            width: 30px;
         }
-        .phone{
-            height:25px;
-            width:25px;
+
+        .phone {
+            height: 25px;
+            width: 25px;
         }
+
         .info {
             text-align: left;
             padding-left: 3px;
         }
-     .cpr{
-        text-align: center;
-     }
+
+        .cpr {
+            text-align: center;
+        }
 
 
-        .loc{
-            height:25px;
-        width: 25px;  
-    padding: 0px;    
-  }
+        .loc {
+            height: 25px;
+            width: 25px;
+            padding: 0px;
+        }
 
 
-  .nameslinkedinl img{
-    height: 20px;
-    width: 20px;
-  }
-  .nameslinkedinl{
-    text-align: left;
-    margin-left: 200px;
-    margin-right: 500px;
-  }
+        .nameslinkedinl img {
+            height: 20px;
+            width: 20px;
+        }
 
-  
+        .nameslinkedinl {
+            text-align: left;
+            margin-left: 200px;
+            margin-right: 500px;
+        }
 
-  .nameslinkedinr img{
-    height: 20px;
-    width: 20px;
-    
-  }
 
-  .linkedinpr{
-    display: flex;
-    
-    
 
-  }
-  .linkedinpr img{
-    margin-left: 10px;
-  }
-  .fhead{
-    margin-left: 210px;
-    font-size: 25px;
-  }
-  .social-icons img{
-    height: 30px;
-    width: 30px;
-    margin-left: 15px;
-    
-  }
-  .social-icons{
-    margin-left: 500px;
-  }
-  #dark-mode-toggle{
-   
-      
-    
-    background-color: #e74c3c;
-    color: #ffffff; 
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  #dark-mode-toggle:hover {
-    background-color: #c0392b; 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-  }
-  body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-  }
-  
-  body.dark-mode .navbar {
-    background-color: #1a1a1a;
-    color: #ffffff;
-  }
-  
-  body.dark-mode .navbar a {
-    color: #1abc9c;
-  }
- 
-  
+        .nameslinkedinr img {
+            height: 20px;
+            width: 20px;
+
+        }
+
+        .linkedinpr {
+            display: flex;
+
+
+
+        }
+
+        .linkedinpr img {
+            margin-left: 10px;
+        }
+
+        .fhead {
+            margin-left: 210px;
+            font-size: 25px;
+        }
+
+        .social-icons img {
+            height: 30px;
+            width: 30px;
+            margin-left: 15px;
+
+        }
+
+        .social-icons {
+            margin-left: 500px;
+        }
+
+        #dark-mode-toggle {
+
+
+
+            background-color: #e74c3c;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #dark-mode-toggle:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        body.dark-mode .navbar a {
+            color: #1abc9c;
+        }
+
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+        #scrollToTop:hover {
+            background-color: #0056b3;
+        }
+
+
+
 
     </style>
 </head>
+
 <body>
-    
+    <button id="scrollToTop" style="display: none;">Top</button>
     <nav class="navbar">
         <div class="logo">
-            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/18018203/434482_69931.png" alt="Quiz Rizz Logo">
+            <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/18018203/434482_69931.png"
+                alt="Quiz Rizz Logo">
         </div>
         <ul class="nav-links">
             <li><a href="#1">Home</a></li>
@@ -845,13 +898,13 @@ details[open] p {
         <div class="auth-buttons">
             <a href="Signup.html" class="signup-btn">Signup</a>
             <a href="Login.html" class="login-btn">Login</a>
-            
+
         </div>
     </nav>
 
-    
+
     <section class="hero">
-        <div class="content" id="1" >
+        <div class="content" id="1">
             <h1>Welcome to QUIZ RIZZ</h1>
             <p>The ultimate quiz platform for students</p>
         </div>
@@ -860,79 +913,89 @@ details[open] p {
     <main class="Aboutusmain" id="6">
         <h1>About Us</h1>
 
-            <br>
-             Your ultimate quiz destination! We're passionate about creating engaging and educational experiences for quiz enthusiasts.</p>
-    
-    <br>
-    <br>
+        <br>
+        Your ultimate quiz destination! We're passionate about creating engaging and educational experiences for quiz
+        enthusiasts.</p>
 
-    <section class=" features">
-        <h2 class="section-title">Key Features</h2>
-        <ul>
-            <li><i class="fas fa-check-star"></i> Multiple quiz categories (History, Science and more)</li>
-            <li><i class="fas fa-check-star"></i> Interactive quiz interface with different difficulty levels.</li>
-            <li><i class="fas fa-check-star"></i> Regularly updated question bank</li>
-            <li><i class="fas fa-check-star"></i> Secure and private user data</li>
-        </ul>
-    </section>
+        <br>
+        <br>
 
-    <section class="Aboutussection">
-        <h2 class="section-title">Why Choose QuizRizz?</h2>
-        <div class="why-choose-us">
-            <div class="advantage-box">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WSjkJ6TTbuZHpuxEhAXMBYU-X8wFn-BwFQ&s" alt="Enhancing Knowledge & Skills">
-                <h3>Enhance Knowledge & Skills</h3>
-                <p>Expand your knowledge in various subjects, from history to science, while improving your skills through interactive quizzing.</p>
+        <section class=" features" id="key">
+            <h2 class="section-title">Key Features</h2>
+            <ul>
+                <li><i class="fas fa-check-star"></i> Multiple quiz categories (History, Science and more)</li>
+                <li><i class="fas fa-check-star"></i> Interactive quiz interface with different difficulty levels.</li>
+                <li><i class="fas fa-check-star"></i> Regularly updated question bank</li>
+                <li><i class="fas fa-check-star"></i> Secure and private user data</li>
+            </ul>
+        </section>
+
+        <section class="Aboutussection">
+            <h2 class="section-title">Why Choose QuizRizz?</h2>
+            <div class="why-choose-us">
+                <div class="advantage-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WSjkJ6TTbuZHpuxEhAXMBYU-X8wFn-BwFQ&s"
+                        alt="Enhancing Knowledge & Skills">
+                    <h3>Enhance Knowledge & Skills</h3>
+                    <p>Expand your knowledge in various subjects, from history to science, while improving your skills
+                        through interactive quizzing.</p>
+                </div>
+
+                <div class="advantage-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6lhGH3mNC6tZWfrSUqd2Z3EDucCY-6NiHQ&s"
+                        alt="Critical Thinking">
+                    <h3>Boost Critical Thinking</h3>
+                    <p>Challenge your mind and enhance your critical thinking abilities by solving thought-provoking
+                        questions.</p>
+                </div>
+
+                <div class="advantage-box">
+                    <img src="https://thehardcopy.co/wp-content/uploads/kab-banega.jpg" alt="Leaderboard Competition">
+                    <h3>Productive Entertainment</h3>
+                    <p>A unique blend of entertainment and education, making it the perfect destination for those
+                        seeking productive leasure. </p>
+                </div>
+
+
             </div>
+        </section>
 
-            <div class="advantage-box">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc6lhGH3mNC6tZWfrSUqd2Z3EDucCY-6NiHQ&s" alt="Critical Thinking">
-                <h3>Boost Critical Thinking</h3>
-                <p>Challenge your mind and enhance your critical thinking abilities by solving thought-provoking questions.</p>
+
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>At QuizRizz, our mission is to spark curiosity and foster learning in a fun and engaging way. We believe
+                that education doesn’t have to be boring, and we’re dedicated to providing a platform that makes
+                learning interactive, competitive, and enjoyable for everyone. We aim to create a community where
+                knowledge is celebrated, curiosity is encouraged, and everyone can sharpen their minds while having fun.
+            </p>
+        </section>
+
+
+        <section class="fun-facts">
+            <h2>Quiz Facts</h2>
+            <div class="facts-grid">
+                <div class="fact-box">
+                    <h3>Quiz Fever!!</h3>
+                    <p>The average person spends 16 days of their life taking quizzes online!!</p>
+                </div>
+
+                <div class="fact-box">
+                    <h3>Paws-itively Popular Topics!</h3>
+                    <p>Did you know? The most popular quiz topics are animals and pop culture!</p>
+                </div>
+
+                <div class="fact-box">
+                    <h3>Brain Booster!</h3>
+                    <p>Quizzes can boost knowledge retention by up to 70%!</p>
+                </div>
+
+                <div class="fact-box">
+                    <h3>Quiz Time, All the Time!</h3>
+                    <p>Our team loves quizzes so much, we even quiz each other during meetings!</p>
+                </div>
             </div>
-
-            <div class="advantage-box">
-                <img src="https://thehardcopy.co/wp-content/uploads/kab-banega.jpg" alt="Leaderboard Competition">
-                <h3>Productive Entertainment</h3>
-                <p>A unique blend of entertainment and education, making it the perfect destination for those seeking productive leasure. </p>
-            </div>
-
-            
-        </div>
-    </section>
-
-
-    <section class="mission">
-        <h2>Our Mission</h2>
-        <p>At QuizRizz, our mission is to spark curiosity and foster learning in a fun and engaging way. We believe that education doesn’t have to be boring, and we’re dedicated to providing a platform that makes learning interactive, competitive, and enjoyable for everyone. We aim to create a community where knowledge is celebrated, curiosity is encouraged, and everyone can sharpen their minds while having fun.</p>
-    </section>
-
-
-    <section class="fun-facts">
-        <h2>Quiz Facts</h2>
-        <div class="facts-grid">
-            <div class="fact-box">
-                <h3>Quiz Fever!!</h3>
-                <p>The average person spends 16 days of their life taking quizzes online!!</p>
-            </div>
-
-            <div class="fact-box">
-               <h3>Paws-itively Popular Topics!</h3>
-                <p>Did you know? The most popular quiz topics are animals and pop culture!</p>
-            </div>
-
-            <div class="fact-box">
-               <h3>Brain Booster!</h3>
-                <p>Quizzes can boost knowledge retention by up to 70%!</p>
-            </div>
-
-            <div class="fact-box">
-               <h3>Quiz Time, All the Time!</h3>
-                <p>Our team loves quizzes so much, we even quiz each other during meetings!</p>
-            </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 
 
     <div class="quiz" id="2">
@@ -940,65 +1003,86 @@ details[open] p {
         <h3 class="a">Master your subjects with our interactive quizzes</h3>
         <div class="ktube">
             <section class="subject">
-                <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/138744_830259.jpeg" alt="Mathematics">                                            
+                <img class="subjimg"
+                    src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/138744_830259.jpeg"
+                    alt="Mathematics">
                 <h2 class="subj">Mathematics</h2>
-                <p>Our mathematics quizzes are designed to strengthen your problem-solving skills and enhance your understanding of key concepts, from basic arithmetic to advanced calculus.</p>        
+                <p>Our mathematics quizzes are designed to strengthen your problem-solving skills and enhance your
+                    understanding of key concepts, from basic arithmetic to advanced calculus.</p>
                 <button class="but">START QUIZ</button>
             </section>
 
             <section class="subject">
-                <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/953446_989058.jpeg" alt="Physics">
-                <h2 class="subj">Physics</h2>  
-                <p>The physics quiz is a journey into the laws of nature, testing your grasp of motion, energy, and the forces that govern our universe.</p>
+                <img class="subjimg"
+                    src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/953446_989058.jpeg"
+                    alt="Physics">
+                <h2 class="subj">Physics</h2>
+                <p>The physics quiz is a journey into the laws of nature, testing your grasp of motion, energy, and the
+                    forces that govern our universe.</p>
                 <button class="but">START QUIZ</button>
             </section>
 
             <section class="subject">
-                <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/795623_660041.jpeg" alt="Chemistry">
+                <img class="subjimg"
+                    src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/795623_660041.jpeg"
+                    alt="Chemistry">
                 <h2 class="subj">Chemistry</h2>
-                <p>A chemistry quiz is an exciting journey through the reactions and elements that shape our world.</p>                  
+                <p>A chemistry quiz is an exciting journey through the reactions and elements that shape our world.</p>
                 <button class="but">START QUIZ</button>
             </section>
 
             <section class="subject">
-                <img class="subjimg" src="https://cdn.pixabay.com/photo/2018/09/06/18/49/bacteria-3658992_1280.jpg" alt="Biology">
+                <img class="subjimg" src="https://cdn.pixabay.com/photo/2018/09/06/18/49/bacteria-3658992_1280.jpg"
+                    alt="Biology">
                 <h2 class="subj">Biology</h2>
-                <p>A biology quiz invites you to dive into the wonders of life, from the tiniest cells to complex ecosystems.</p>
+                <p>A biology quiz invites you to dive into the wonders of life, from the tiniest cells to complex
+                    ecosystems.</p>
                 <button class="but">START QUIZ</button>
             </section>
 
             <section class="subject">
                 <img class="subjimg" src="https://i.ytimg.com/vi/F0Gkr4MBEO0/hqdefault.jpg" alt="History">
                 <h2 class="subj">History</h2>
-                <p>A history quiz takes you on a journey through time, testing your knowledge of the events that shaped our world.</p>              
+                <p>A history quiz takes you on a journey through time, testing your knowledge of the events that shaped
+                    our world.</p>
                 <button class="but">START QUIZ</button>
             </section>
 
             <section class="subject">
-                <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/71239_897290.jpeg" alt="Geography">
+                <img class="subjimg"
+                    src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/71239_897290.jpeg"
+                    alt="Geography">
                 <h2 class="subj">Geography</h2>
-                <p>A geography quiz takes you on a journey across diverse landscapes and cultures.</p>              
+                <p>A geography quiz takes you on a journey across diverse landscapes and cultures.</p>
                 <button class="but">START QUIZ</button>
             </section>
 
             <section class="subject">
-                <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/917704_462630.png" alt="Economics">
+                <img class="subjimg"
+                    src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/917704_462630.png"
+                    alt="Economics">
                 <h2 class="subj">Economics</h2>
-                <p>An economics quiz challenges you to explore key concepts of supply and demand and market dynamics.</p>              
+                <p>An economics quiz challenges you to explore key concepts of supply and demand and market dynamics.
+                </p>
                 <button class="but">START QUIZ</button>
             </section>
 
             <section class="subject">
-                <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/417272_716520.jpeg" alt="Commerce">
+                <img class="subjimg"
+                    src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/417272_716520.jpeg"
+                    alt="Commerce">
                 <h2 class="subj">Commerce</h2>
-                <p>A commerce quiz tests your knowledge of the business world, from finance and trade to economics.</p>              
+                <p>A commerce quiz tests your knowledge of the business world, from finance and trade to economics.</p>
                 <button class="but">START QUIZ</button>
             </section>
 
             <section class="subject">
-                <img class="subjimg" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/498405_639076.jpeg" alt="General Knowledge">
+                <img class="subjimg"
+                    src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/18018203/498405_639076.jpeg"
+                    alt="General Knowledge">
                 <h2 class="subj">General Knowledge</h2>
-                <p>A General Knowledge quiz is an exciting journey through diverse topics, testing your awareness of the world!</p>              
+                <p>A General Knowledge quiz is an exciting journey through diverse topics, testing your awareness of the
+                    world!</p>
                 <button class="but">START QUIZ</button>
             </section>
         </div>
@@ -1009,13 +1093,15 @@ details[open] p {
     <div class="containerfornews" id="3">
         <div class="title-header">
             Ongoing Events in Various Subjects & Global News
-            <img src="https://w7.pngwing.com/pngs/57/960/png-transparent-computer-icons-online-newspaper-news-media-others-text-label-orange-thumbnail.png" alt="news">
+            <img src="https://w7.pngwing.com/pngs/57/960/png-transparent-computer-icons-online-newspaper-news-media-others-text-label-orange-thumbnail.png"
+                alt="news">
         </div>
-        
+
 
         <section class="global-events">
             <header class="global-events-header" aria-expanded="false">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Nobel_Prize.png/330px-Nobel_Prize.png" alt="Global Event Icon">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Nobel_Prize.png/330px-Nobel_Prize.png"
+                    alt="Global Event Icon">
                 Global Current Events
             </header>
             <article class="global-news-content">
@@ -1030,7 +1116,8 @@ details[open] p {
         <section class="dropdown-section">
             <article class="dropdown">
                 <header class="dropdown-header" aria-expanded="false">
-                    <img src="https://img.freepik.com/premium-vector/mathematics-circular-flat-illustration-vector-math-banner_104589-3151.jpg" alt="Math Icon">
+                    <img src="https://img.freepik.com/premium-vector/mathematics-circular-flat-illustration-vector-math-banner_104589-3151.jpg"
+                        alt="Math Icon">
                     Maths
                 </header>
                 <div class="dropdown-content">
@@ -1042,7 +1129,8 @@ details[open] p {
 
             <article class="dropdown">
                 <header class="dropdown-header" aria-expanded="false">
-                    <img src="https://img.freepik.com/free-vector/atom-illustration-model-with-electrons-neutron-isolated_1284-53084.jpg?size=338&ext=jpg&ga=GA1.1.1819120589.1728432000&semt=ais_hybrid" alt="Physics Icon">
+                    <img src="https://img.freepik.com/free-vector/atom-illustration-model-with-electrons-neutron-isolated_1284-53084.jpg?size=338&ext=jpg&ga=GA1.1.1819120589.1728432000&semt=ais_hybrid"
+                        alt="Physics Icon">
                     Physics
                 </header>
                 <div class="dropdown-content">
@@ -1054,7 +1142,8 @@ details[open] p {
 
             <article class="dropdown">
                 <header class="dropdown-header" aria-expanded="false">
-                    <img src="https://www.pngitem.com/pimgs/m/549-5492996_creative-chemistry-logo-design-hd-png-download.png" alt="Chemistry Icon">
+                    <img src="https://www.pngitem.com/pimgs/m/549-5492996_creative-chemistry-logo-design-hd-png-download.png"
+                        alt="Chemistry Icon">
                     Chemistry
                 </header>
                 <div class="dropdown-content">
@@ -1066,42 +1155,48 @@ details[open] p {
 
             <article class="dropdown">
                 <header class="dropdown-header" aria-expanded="false">
-                    <img src="https://cdn.pixabay.com/photo/2018/09/06/18/49/bacteria-3658992_1280.jpg" alt="Biology Icon">
+                    <img src="https://cdn.pixabay.com/photo/2018/09/06/18/49/bacteria-3658992_1280.jpg"
+                        alt="Biology Icon">
                     Biology
                 </header>
                 <div class="dropdown-content">
                     <a href="https://www.youtube.com/watch?v=w8Zp87G9BmE">computational protein design</a>
-                    <a href="https://open.spotify.com/show/7bNsvg0hvsTZXCNoWXOjcu">Marine Biology as a career podcast</a>
+                    <a href="https://open.spotify.com/show/7bNsvg0hvsTZXCNoWXOjcu">Marine Biology as a career
+                        podcast</a>
                 </div>
             </article>
 
             <article class="dropdown">
                 <header class="dropdown-header" aria-expanded="false">
-                    <img src="https://www.shutterstock.com/image-vector/athens-famous-landmark-line-icon-260nw-1483781573.jpg" alt="History Icon">
+                    <img src="https://www.shutterstock.com/image-vector/athens-famous-landmark-line-icon-260nw-1483781573.jpg"
+                        alt="History Icon">
                     History
                 </header>
                 <div class="dropdown-content">
                     <a href="https://www.archives.gov/research/military/ww2">World War II Exhibit</a>
                     <a href="https://www.youtube.com/@WorldofAntiquity">Ancient Civilizations findings 2024</a>
-                    
+
                 </div>
             </article>
 
             <article class="dropdown">
                 <header class="dropdown-header" aria-expanded="false">
-                    <img src="https://img.freepik.com/free-vector/earth-globe-world-cartoon-vector-icon-illustration-education-object-icon-isolated-flat-vector_138676-13140.jpg" alt="Geography Icon">
+                    <img src="https://img.freepik.com/free-vector/earth-globe-world-cartoon-vector-icon-illustration-education-object-icon-isolated-flat-vector_138676-13140.jpg"
+                        alt="Geography Icon">
                     Geography
                 </header>
                 <div class="dropdown-content">
                     <a href="https://www.nrdc.org/stories/global-warming-101#warming">Global warming and its impacts</a>
                     <a href="https://en.wikipedia.org/wiki/Cartography">Cartography </a>
-                    <a href="https://www.kadn.com/news/only-on-news15/new-island-discovered-off-louisiana-coast-near-st-mary-parish/article_11cece76-5c24-11ef-a2f9-7bb6aab8fbb6.html">New regions discovered 2024</a>
+                    <a
+                        href="https://www.kadn.com/news/only-on-news15/new-island-discovered-off-louisiana-coast-near-st-mary-parish/article_11cece76-5c24-11ef-a2f9-7bb6aab8fbb6.html">New
+                        regions discovered 2024</a>
                 </div>
             </article>
         </section>
     </div>
 
-    
+
 
 
     <div class="premium-section" id="4">
@@ -1118,7 +1213,7 @@ details[open] p {
                 </ul>
                 <a href="#" class="select-btn">Get Started</a>
             </div>
-            
+
 
             <div class="plan pro-plan">
                 <h3>Pro Plan</h3>
@@ -1130,7 +1225,7 @@ details[open] p {
                 </ul>
                 <a href="#" class="select-btn">Upgrade Now</a>
             </div>
-            
+
 
             <div class="plan advance-plan">
                 <h3>Advance Plan</h3>
@@ -1145,44 +1240,52 @@ details[open] p {
         </div>
     </div>
 
-        <section class="faq" id="faq">
-            <h1>FAQs</h1>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <details>
-                        <summary class="summary">What is Quiz Rizz?</summary>
-                        <p class="content_">Quiz Rizz is an interactive online platform where users can solve quizzes on a wide range of topics, from general knowledge and current events to specialized subjects. It offers an engaging way to test your knowledge, improve your skills, and have fun while learning. Perfect for both casual learners and quiz enthusiasts, Quiz Rizz makes learning entertaining with its user-friendly interface and diverse quiz categories.</p>
-                    </details>
-                </div>
-                <div class="faq-item">
-                    <details>
-                        <summary class="summary">How can I start a quiz?</summary>
-                        <p class="content_">Simply navigate to the subject whose quiz you want to create, choose the difficulty, and you are good to go with your quiz.</p>
-                    </details>
-                </div>
-                <div class="faq-item">
-                    <details>
-                        <summary class="summary">What features are included in the Premium Plan?</summary>
-                        <p class="content_">The Premium Plan offers AI support, access to leaderboards, mentor support, and exclusive 3D video content to enhance your learning journey.</p>
-                    </details>
-                </div>
-                <div class="faq-item">
-                    <details>
-                        <summary class="summary">Is there a free version available?</summary>
-                        <p class="content_">Yes, we offer a basic free version that allows limited quiz creations and access to our study materials. Upgrade to Premium for more features.</p>
-                    </details>
-                </div>
-                <div class="faq-item">
-                    <details>
-                        <summary class="summary">How do I contact support?</summary>
-                        <p class="content_">You can reach out to our support team through the "Contact Us" link in the navbar or by emailing quizrizz10@gmail.com.</p>
-                    </details>
-                </div>
+    <section class="faq" id="faq">
+        <h1>FAQs</h1>
+        <div class="faq-container">
+            <div class="faq-item">
+                <details>
+                    <summary class="summary">What is Quiz Rizz?</summary>
+                    <p class="content_">Quiz Rizz is an interactive online platform where users can solve quizzes on a
+                        wide range of topics, from general knowledge and current events to specialized subjects. It
+                        offers an engaging way to test your knowledge, improve your skills, and have fun while learning.
+                        Perfect for both casual learners and quiz enthusiasts, Quiz Rizz makes learning entertaining
+                        with its user-friendly interface and diverse quiz categories.</p>
+                </details>
             </div>
-        </section>
+            <div class="faq-item">
+                <details>
+                    <summary class="summary">How can I start a quiz?</summary>
+                    <p class="content_">Simply navigate to the subject whose quiz you want to create, choose the
+                        difficulty, and you are good to go with your quiz.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary class="summary">What features are included in the Premium Plan?</summary>
+                    <p class="content_">The Premium Plan offers AI support, access to leaderboards, mentor support, and
+                        exclusive 3D video content to enhance your learning journey.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary class="summary">Is there a free version available?</summary>
+                    <p class="content_">Yes, we offer a basic free version that allows limited quiz creations and access
+                        to our study materials. Upgrade to Premium for more features.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary class="summary">How do I contact support?</summary>
+                    <p class="content_">You can reach out to our support team through the "Contact Us" link in the
+                        navbar or by emailing quizrizz10@gmail.com.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
 
-  <div class="footer22">
+    <div class="footer22">
         <h1 class="fh">Contact Us</h1>
         <p class="fp">We're here to assist you with any questions or feedback</p>
         <div class="containerfoot">
@@ -1198,16 +1301,19 @@ details[open] p {
                 </form>
             </div>
             <div class="map22">
-                <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100737.2029680308!2d80.97065864909837!3d26.86648696205908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399b8f4c1b0838b7%3A0xe91576e11e60d45a!2sIndian%20Institute%20of%20Information%20Technology%20Lucknow!5e0!3m2!1sen!2sin!4v1696523518744!5m2!1sen!2sin" 
-                allowfullscreen="" 
-                loading="lazy"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100737.2029680308!2d80.97065864909837!3d26.86648696205908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399b8f4c1b0838b7%3A0xe91576e11e60d45a!2sIndian%20Institute%20of%20Information%20Technology%20Lucknow!5e0!3m2!1sen!2sin!4v1696523518744!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy"></iframe>
             </div>
             <div class="map-details22">
-                <p class="info"><img class="loc" src="https://cdn-icons-png.freepik.com/512/8025/8025330.png" alt="img">  Indian Institute of Information Technology Lucknow, Ahmamau, Lucknow, India.</p> <br>
-                <p><img class="clock" src="https://cdn-icons-png.flaticon.com/512/8655/8655954.png" alt="cl">  Mon-Fri 10am-5pm, Sat 1pm-5pm</p><br>
-                <p><img class="phone" src="https://i.pinimg.com/564x/44/9c/cb/449ccb8d7794945c6c2b30e3dbe09e68.jpg"> Phone : 75886317728</p><br>
-                <p><img class="email" src="https://i.pinimg.com/474x/e1/54/70/e1547034edad1af998624b6ac8d83a08.jpg"> Email : quizrizz10@gmail.com</p>
+                <p class="info"><img class="loc" src="https://cdn-icons-png.freepik.com/512/8025/8025330.png" alt="img">
+                    Indian Institute of Information Technology Lucknow, Ahmamau, Lucknow, India.</p> <br>
+                <p><img class="clock" src="https://cdn-icons-png.flaticon.com/512/8655/8655954.png" alt="cl"> Mon-Fri
+                    10am-5pm, Sat 1pm-5pm</p><br>
+                <p><img class="phone" src="https://i.pinimg.com/564x/44/9c/cb/449ccb8d7794945c6c2b30e3dbe09e68.jpg">
+                    Phone : 75886317728</p><br>
+                <p><img class="email" src="https://i.pinimg.com/474x/e1/54/70/e1547034edad1af998624b6ac8d83a08.jpg">
+                    Email : quizrizz10@gmail.com</p>
             </div>
 
         </div>
@@ -1218,59 +1324,86 @@ details[open] p {
         <p class="fhead">Members:</p>
 
         <div class="linkedinpr">
-            
 
-        <div class="nameslinkedinl">
-            <p class="L">  <a href="https://www.linkedin.com/in/rohan-garg-679928327/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"> </a>  Rohan Garg</p> 
-            <p class="L">  <a href="https://www.linkedin.com/in/rushil-dhingra-b15276316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>  Rushil Dhingra</p>
-             <p class="L">  <a href="https://www.linkedin.com/in/chirag-shirsath-03868a325"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>  Chirag Shirsath</p>
-             <p class="L">  <a href="https://www.linkedin.com/in/anisha-chillamacharla-06652a325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>  Anisha Chillamacharla</p>
-            <p class="L">  <a href="https://www.linkedin.com/in/adityashingare?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>  Aditya Shingare</p>
+
+            <div class="nameslinkedinl">
+                <p class="L"> <a href="https://www.linkedin.com/in/rohan-garg-679928327/"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s">
+                    </a> Rohan Garg</p>
+                <p class="L"> <a
+                        href="https://www.linkedin.com/in/rushil-dhingra-b15276316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+                    Rushil Dhingra</p>
+                <p class="L"> <a href="https://www.linkedin.com/in/chirag-shirsath-03868a325"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+                    Chirag Shirsath</p>
+                <p class="L"> <a
+                        href="https://www.linkedin.com/in/anisha-chillamacharla-06652a325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+                    Anisha Chillamacharla</p>
+                <p class="L"> <a
+                        href="https://www.linkedin.com/in/adityashingare?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+                    Aditya Shingare</p>
             </div>
-        
 
 
-                  <div class="nameslinkedinr">
-                     <p class="R"><a href="https://www.linkedin.com/in/ishaan-bansal-2977a7317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>  Ishaan Bansal </p>
-                        <p class="R"> <a href="https://www.linkedin.com/in/kaustubh-goge-622696325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>  Kaustubh Goge </p>
-                        <p class="R"> <a href="https://www.linkedin.com/in/pratik-kapure-919639313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>  Pratik Kapure</p>
-                        <p class="R"> <a href="https://www.linkedin.com/in/vedant-humbe-a96a94327/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>  Vedant Humbe </p>
-                          <p class="R"> <a href="https://www.linkedin.com/in/sanjana-chennupati-857b50318/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>  Sanjana Chennupati </p>
-                    </div>
+
+            <div class="nameslinkedinr">
+                <p class="R"><a
+                        href="https://www.linkedin.com/in/ishaan-bansal-2977a7317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+                    Ishaan Bansal </p>
+                <p class="R"> <a
+                        href="https://www.linkedin.com/in/kaustubh-goge-622696325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+                    Kaustubh Goge </p>
+                <p class="R"> <a
+                        href="https://www.linkedin.com/in/pratik-kapure-919639313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+                    Pratik Kapure</p>
+                <p class="R"> <a href="https://www.linkedin.com/in/vedant-humbe-a96a94327/"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+                    Vedant Humbe </p>
+                <p class="R"> <a href="https://www.linkedin.com/in/sanjana-chennupati-857b50318/"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamqcDlnOs-V8rDFNZj7RfGhIgYAbwIFMGzA&s"></a>
+                    Sanjana Chennupati </p>
+            </div>
         </div>
 
 
         <div class="social-icons">
-            
-           <a href="/"><img src="https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo_instagram-512.png"></a>
-      
-      <a href="/"><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png"></a>
-      <a href="/"><img src="https://i.pinimg.com/564x/6b/ab/30/6bab3017350ca04c6fa05569672bd31e.jpg"></a>
-      <a href="/"><img src="https://art.pixilart.com/47700d2e75da.png"></a>
+
+            <a href="/"><img
+                    src="https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo_instagram-512.png"></a>
+
+            <a href="/"><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png"></a>
+            <a href="/"><img src="https://i.pinimg.com/564x/6b/ab/30/6bab3017350ca04c6fa05569672bd31e.jpg"></a>
+            <a href="/"><img src="https://art.pixilart.com/47700d2e75da.png"></a>
         </div>
 
         <footer class="text-center py-4">
             <button id="dark-mode-toggle" class="btn btn-primary">Enable Dark Mode</button>
-          
-            <script>
-                const toggleButton = document.getElementById('dark-mode-toggle');
 
-                toggleButton.addEventListener('click', () => {
-                  const body = document.body;
-                
-                  if (body.classList.contains('dark-mode')) {
-                    body.classList.remove('dark-mode');
-                    body.classList.add('light-mode');
-                    toggleButton.textContent = 'Enable Dark Mode';
-                  } else {
-                    body.classList.remove('light-mode');
-                    body.classList.add('dark-mode');
-                    toggleButton.textContent = 'Disable Dark Mode';
-                  }
+            <script>
+                const toggleButton=document.getElementById('dark-mode-toggle');
+
+                toggleButton.addEventListener('click',() => {
+                    const body=document.body;
+
+                    if(body.classList.contains('dark-mode')) {
+                        body.classList.remove('dark-mode');
+                        body.classList.add('light-mode');
+                        toggleButton.textContent='Enable Dark Mode';
+                    } else {
+                        body.classList.remove('light-mode');
+                        body.classList.add('dark-mode');
+                        toggleButton.textContent='Disable Dark Mode';
+                    }
                 });
-                
+
             </script>
-          </footer>
+        </footer>
 
 
 
@@ -1278,8 +1411,8 @@ details[open] p {
         <p class="cpr">&copy; Copyright QuizRizz@2024</p>
     </div>
 
+    <script src="script.js"></script>
 
-    
 </body>
-</html>
 
+</html>
