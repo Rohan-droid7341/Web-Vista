@@ -173,6 +173,12 @@
         .footer a:hover {
             text-decoration: underline;
         }
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+            display: none;
+        }
         @media (max-width: 600px) {
             .signup-container {
                 padding: 30px 20px;
@@ -192,68 +198,158 @@
 </head>
 <body>
 
-    <div class="signup-container">
-        <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/18018203/434482_69931.png" alt="Quizrizz Logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/100x100.png?text=Quizrizz';">
+    <div class="signup-container" id="signupContainer">
+        <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/18018203/434482_69931.png" alt="Quizrizz Logo">
         <h2>Welcome to Quizrizz</h2>
-        <form class="signup-form" action="signup_process.php" method="post">
+        <form class="signup-form" id="signupForm" onsubmit="return validateForm()">
             <div class="input-group">
                 <label for="full-name">Full Name</label>
                 <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                <div id="fullNameError" class="error-message">Please enter your full name</div>
             </div>
             <div class="input-group">
                 <label for="email">Email ID</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <div id="emailError" class="error-message">Please enter a valid email address</div>
             </div>
             <div class="input-group">
                 <label for="mobile">Mobile Number</label>
-                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+                <div id="mobileError" class="error-message">Please enter a valid 10-digit mobile number</div>
             </div>
             <div class="input-group">
                 <label>Gender</label>
                 <div class="radio-group">
-                    <label><input type="radio" name="gender" value="male" required> Male</label>
-                    <label><input type="radio" name="gender" value="female" required> Female</label>
-                    <label><input type="radio" name="gender" value="other" required> Other</label>
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
                 </div>
+                <div id="genderError" class="error-message">Please select your gender</div>
             </div>
             <div class="input-group">
                 <label>Who Are You?</label>
                 <div class="radio-group">
-                    <label><input type="radio" name="role" value="teacher" required> Teacher</label>
-                    <label><input type="radio" name="role" value="parent" required> Parent</label>
-                    <label><input type="radio" name="role" value="student" required> Student</label>
+                    <label><input type="radio" name="role" value="teacher"> Teacher</label>
+                    <label><input type="radio" name="role" value="parent"> Parent</label>
+                    <label><input type="radio" name="role" value="student"> Student</label>
                 </div>
+                <div id="roleError" class="error-message">Please select your role</div>
             </div>
             <div class="input-group">
                 <label for="education">Educational Qualification</label>
-                <select id="education" name="education" required>
+                <select id="education" name="education">
                     <option value="" disabled selected>Select your qualification</option>
                     <option value="high-school">High School</option>
                     <option value="undergraduate">Undergraduate</option>
                     <option value="postgraduate">Postgraduate</option>
                     <option value="phd">PhD</option>
                 </select>
+                <div id="educationError" class="error-message">Please select your educational qualification</div>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Create a password" required>
+                <div id="passwordError" class="error-message">Password must be at least 8 characters long</div>
             </div>
             <div class="input-group terms">
-                <input type="checkbox" id="terms" name="terms" required>
+                <input type="checkbox" id="terms" name="terms">
                 <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                <div id="termsError" class="error-message">You must agree to the terms and conditions</div>
             </div>
             <button type="submit" class="submit-btn">Sign Up</button>
         </form>
-        <div class="divider">or</div>
-        <div class="social-signup">
-            <button class="google-signup"><i class="fab fa-google"></i> Sign Up with Google</button>
-            <button class="facebook-signup"><i class="fab fa-facebook-f"></i> Sign Up with Facebook</button>
-            <button class="iiitl-signup"><i class="fas fa-user-graduate"></i> Sign Up with IIITL Account</button>
-        </div>
-        <div class="footer">
-            <p>Already have an account? <a href="Login.html">Login here</a></p>
-        </div>
     </div>
+
+    <script>
+        function validateForm() {
+            // Reset previous validation states
+            const errorMessages = document.querySelectorAll('.error-message');
+            const inputs = document.querySelectorAll('input, select');
+            const container = document.getElementById('signupContainer');
+
+            errorMessages.forEach(error => error.style.display = 'none');
+            inputs.forEach(input => input.style.borderColor = '#b0bec5');
+            container.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
+
+            let isValid = true;
+
+            // Full Name Validation
+            const fullName = document.getElementById('full-name');
+            if (fullName.value.trim() === '') {
+                document.getElementById('fullNameError').style.display = 'block';
+                fullName.style.borderColor = 'red';
+                isValid = false;
+            }
+
+            // Email Validation
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                document.getElementById('emailError').style.display = 'block';
+                email.style.borderColor = 'red';
+                isValid = false;
+            }
+
+            // Mobile Number Validation
+            const mobile = document.getElementById('mobile');
+            const mobileRegex = /^[0-9]{10}$/;
+            if (!mobileRegex.test(mobile.value)) {
+                document.getElementById('mobileError').style.display = 'block';
+                mobile.style.borderColor = 'red';
+                isValid = false;
+            }
+
+            // Gender Validation
+            const genderInputs = document.querySelectorAll('input[name="gender"]');
+            const isGenderSelected = Array.from(genderInputs).some(input => input.checked);
+            if (!isGenderSelected) {
+                document.getElementById('genderError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Role Validation
+            const roleInputs = document.querySelectorAll('input[name="role"]');
+            const isRoleSelected = Array.from(roleInputs).some(input => input.checked);
+            if (!isRoleSelected) {
+                document.getElementById('roleError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Education Validation
+            const education = document.getElementById('education');
+            if (education.value === '') {
+                document.getElementById('educationError').style.display = 'block';
+                education.style.borderColor = 'red';
+                isValid = false;
+            }
+
+            // Password Validation
+            const password = document.getElementById('password');
+            if (password.value.length < 8) {
+                document.getElementById('passwordError').style.display = 'block';
+                password.style.borderColor = 'red';
+                isValid = false;
+            }
+
+            // Terms Validation
+            const terms = document.getElementById('terms');
+            if (!terms.checked) {
+                document.getElementById('termsError').style.display = 'block';
+                isValid = false;
+            }
+
+            // If validation fails, show red shadow
+            if (!isValid) {
+                container.style.boxShadow = '0 0 10px rgba(255, 0, 0, 0.5)';
+                return false;
+            }
+
+            // If all validations pass, show success state
+            container.style.boxShadow = '0 0 10px rgba(0, 255, 0, 0.5)';
+            alert('Sign Up Successful!');
+            return true;
+        }
+    </script>
 
 </body>
 </html>
