@@ -197,7 +197,6 @@
     </style>
 </head>
 <body>
-
     <div class="signup-container" id="signupContainer">
         <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/18018203/434482_69931.png" alt="Quizrizz Logo">
         <h2>Welcome to Quizrizz</h2>
@@ -259,97 +258,65 @@
             <button type="submit" class="submit-btn">Sign Up</button>
         </form>
     </div>
-
     <script>
         function validateForm() {
-            // Reset previous validation states
             const errorMessages = document.querySelectorAll('.error-message');
             const inputs = document.querySelectorAll('input, select');
             const container = document.getElementById('signupContainer');
-
             errorMessages.forEach(error => error.style.display = 'none');
             inputs.forEach(input => input.style.borderColor = '#b0bec5');
             container.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
-
+            const fullName = document.getElementById('full-name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const role = document.querySelector('input[name="role"]:checked');
+            const education = document.getElementById('education').value;
+            const terms = document.getElementById('terms').checked;
             let isValid = true;
-
-            // Full Name Validation
-            const fullName = document.getElementById('full-name');
-            if (fullName.value.trim() === '') {
+            if (fullName === '') {
                 document.getElementById('fullNameError').style.display = 'block';
-                fullName.style.borderColor = 'red';
+                document.getElementById('full-name').style.borderColor = 'red';
                 isValid = false;
             }
-
-            // Email Validation
-            const email = document.getElementById('email');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email.value)) {
+            if (!/\S+@\S+\.\S+/.test(email)) {
                 document.getElementById('emailError').style.display = 'block';
-                email.style.borderColor = 'red';
+                document.getElementById('email').style.borderColor = 'red';
                 isValid = false;
             }
-
-            // Mobile Number Validation
-            const mobile = document.getElementById('mobile');
-            const mobileRegex = /^[0-9]{10}$/;
-            if (!mobileRegex.test(mobile.value)) {
+            if (!/^\d{10}$/.test(mobile)) {
                 document.getElementById('mobileError').style.display = 'block';
-                mobile.style.borderColor = 'red';
+                document.getElementById('mobile').style.borderColor = 'red';
                 isValid = false;
             }
-
-            // Gender Validation
-            const genderInputs = document.querySelectorAll('input[name="gender"]');
-            const isGenderSelected = Array.from(genderInputs).some(input => input.checked);
-            if (!isGenderSelected) {
+            if (!gender) {
                 document.getElementById('genderError').style.display = 'block';
                 isValid = false;
             }
-
-            // Role Validation
-            const roleInputs = document.querySelectorAll('input[name="role"]');
-            const isRoleSelected = Array.from(roleInputs).some(input => input.checked);
-            if (!isRoleSelected) {
+            if (!role) {
                 document.getElementById('roleError').style.display = 'block';
                 isValid = false;
             }
-
-            // Education Validation
-            const education = document.getElementById('education');
-            if (education.value === '') {
+            if (!education) {
                 document.getElementById('educationError').style.display = 'block';
-                education.style.borderColor = 'red';
+                document.getElementById('education').style.borderColor = 'red';
                 isValid = false;
             }
-
-            // Password Validation
-            const password = document.getElementById('password');
-            if (password.value.length < 8) {
+            if (password.length < 8) {
                 document.getElementById('passwordError').style.display = 'block';
-                password.style.borderColor = 'red';
+                document.getElementById('password').style.borderColor = 'red';
                 isValid = false;
             }
-
-            // Terms Validation
-            const terms = document.getElementById('terms');
-            if (!terms.checked) {
+            if (!terms) {
                 document.getElementById('termsError').style.display = 'block';
                 isValid = false;
             }
-
-            // If validation fails, show red shadow
             if (!isValid) {
-                container.style.boxShadow = '0 0 10px rgba(255, 0, 0, 0.5)';
-                return false;
+                container.style.boxShadow = '0 12px 24px rgba(255, 0, 0, 0.2)';
             }
-
-            // If all validations pass, show success state
-            container.style.boxShadow = '0 0 10px rgba(0, 255, 0, 0.5)';
-            alert('Sign Up Successful!');
-            return true;
+            return isValid;
         }
     </script>
-
 </body>
 </html>
